@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
-:root{
-    --primaryColor: #66a1ff;
-    --secondaryColor: #1A1A1A;
-    --background-color: #F4F4F4;
-    --mainFontFamily:'Roboto Condensed', sans-serif;
-}
+$primaryColor: #66a1ff;
+$secondaryColor: #1A1A1A;
+$background-color: #F4F4F4;
+$mainFontFamily:'Roboto Condensed', sans-serif;
 
 *{
     margin: 0;
@@ -18,7 +16,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: var(--background-color);
+    width: 100%;
+    background-color: $background-color;
 }
 
 #aplicationContainer{
@@ -27,9 +26,9 @@
     display: grid;
     grid-template-columns: .15fr 1fr;
     border-radius: 20px;
-    box-shadow:  15px 15px 25px #adadad,
+    box-shadow: 15px 15px 25px #adadad,
                 -15px -15px 25px #ffffff;  
-    background-color: var(--background-color);
+    background-color: $background-color;
 }
 
 #buttonsWrap{
@@ -47,8 +46,13 @@
     background: linear-gradient(145deg, #6dacff, #5c91e6);
     border-radius: 50px;
     color: white;
-    font-family: var(--mainFontFamily);
+    font-family: $mainFontFamily;
     font-size: 1.5rem;
+    transition: all 300ms;
+}
+
+#addBookButton:hover{
+    transform: scale(1.09);
 }
 
 #bookListWrap{
@@ -70,14 +74,14 @@
     background-color: #d6d6d6;
     border-radius: 20px;
     transition: all 300ms;
-    color: var(--secondaryColor);
+    color: $secondaryColor;
     padding: 0px 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
 .listed:hover{
-    background-color: var(--primaryColor);
+    background-color: $primaryColor;
     color: #ffffff;
 }
 
@@ -89,12 +93,12 @@
 }
 
 .hourBook{
-    font-family: var(--mainFontFamily);
+    font-family: $mainFontFamily;
     font-size: 2rem;
 }
 
 .bookName{
-    font-family: var(--mainFontFamily);
+    font-family: $mainFontFamily;
     font-size: 1.5rem;
 }
 
@@ -110,7 +114,7 @@
 }
 
 .editBookButton{
-    margin-right: 20px;
+    margin-right: 10px;
     width: 90px;
     height: 30px;
     border: none;
@@ -118,7 +122,7 @@
     border-radius: 10px;
     background-color: #8eda6c;
     color: white;
-    font-family: var(--mainFontFamily);
+    font-family: $mainFontFamily;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -128,7 +132,7 @@
 }
 
 .editBookButton:hover{
-    background-color: var(--secondaryColor);
+    background-color: $secondaryColor;
     color: #8eda6c;
 }
 
@@ -140,7 +144,7 @@
     border-radius: 10px;
     background-color: #e22746;
     color: white;
-    font-family: var(--mainFontFamily);
+    font-family: $mainFontFamily;
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -150,8 +154,43 @@
 }
 
 .deleteBookButton:hover{
-    background-color: var(--secondaryColor);
+    background-color: $secondaryColor;
     color: #e22746;
+}
+
+
+@media(max-width: 1000px){
+    #aplicationContainer{
+        width: 90%;
+        height: 90vh;
+    }
+}
+
+@media(max-width: 870px){
+
+    .editBookButton{
+        display: block;
+    }
+
+    .deleteBookButton{
+        display: block;
+    }
+
+    #aplicationContainer{
+        height: 80vh;
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr;
+        border-radius: 20px;
+        box-shadow: 15px 15px 25px #adadad,
+                    -15px -15px 25px #ffffff;  
+        background-color: $background-color;
+    }
+
+    #aplicationContainer{
+        width: 100%;
+        height: 100vh;
+    }
 }
 
 
